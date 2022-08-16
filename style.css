@@ -1,0 +1,45 @@
+*{
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.calculator-container{
+    width: 600px;
+    height: 800px;
+    outline: 2px solid black;
+    padding: 30px 0;
+}
+
+#display{
+    margin:auto ;
+    width: 90%;
+    height: 150px;
+    background-color: lightcyan;
+}
+
+#keys-container{
+    width: 90%;
+    /* outline: 1px solid blue; */
+    height: 80%;
+    margin:20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-sizing: border-box;
+}
+
+.key{
+    width: 23%;
+    height: 22%;
+    outline: 1px solid green;
+    text-align: center;
+    font-size: 3rem;
+    
+}
+
+.key div{
+    height: 100%;
+    outline: 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
