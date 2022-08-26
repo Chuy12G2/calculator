@@ -47,6 +47,8 @@ const operate = (operator, num1, num2) => {
     }
 }
 
+displayResult.innerHTML = 0;
+
 numbers[0].value = 1;
 numbers[1].value = 2;
 numbers[2].value = 3;
@@ -60,30 +62,34 @@ numbers[9].value = 0;
 
 let arrayValue = [];
 
+//NUMBERS
 numbers.forEach(element => {
     element.addEventListener("click", () => {
         arrayValue.push(element.value);
         let valueNumber = parseInt(arrayValue.join(""));
         displayOperation.value = valueNumber;
         value = displayOperation.value;
+        console.log(value);
         console.log(operands);
         refreshDisplay(element.value);
         
     })
 });
 
+//OPERATORS
 operators.forEach((element) => {
     element.addEventListener("click", () =>{
-        operator = element.value;
-        console.log(operator);
         pushValues(value);
         refreshDisplay(element.value);
         value = 0;
         arrayValue = [];
-
+        let a = operate(operator, operands[0], operands[1]);
+        refreshResult(a);
+        operator = element.value;
     })
 })
 
+//EQUAL SIGN
 equal.addEventListener("click", (element) => {
     pushValues(value);
     value = 0;
@@ -93,7 +99,9 @@ equal.addEventListener("click", (element) => {
 })
 
 function pushValues(value){
-    operands.push(value);
+    if(value){
+        operands.push(value);
+    }
     console.log(operands);
 }
 
@@ -103,7 +111,18 @@ function refreshDisplay(value){
 }
 
 function refreshResult(value){
-    displayResult.innerHTML = value;
+    if(operands[1]){
+        displayResult.innerHTML = value;
+        operands[0] = value;
+        operands.pop();
+    }
+    
+    
+    console.log(operands);
+}
+
+function addOperator(){
+
 }
 
 
