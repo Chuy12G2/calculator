@@ -25,7 +25,16 @@
 .display__operation{
     font-size: 2rem;
     height: 40px;
-    outline: 1px solid blue;
+    
+}
+
+#display-number-one, #display-operator, #display-number-two{
+    text-align: center;
+    height: 100%;
+    outline: 2px solid black;
+    display: inline;
+    width: 40px;
+    margin: 0;
 }
 
 .display__result{
